@@ -21,5 +21,16 @@ function createBoard(size) {
         board.appendChild(square);
     }
 }
-
-createBoard(16  );   
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', () => {
+    let newSize = prompt("Enter new board size (e.g., 16 for 16x16):");
+    if (newSize) {
+        newSize = parseInt(newSize);
+        if (isNaN(newSize) || newSize <= 0 || newSize > 100) {
+            alert("Please enter a valid number between 1 and 100.");
+        } else {
+            createBoard(newSize);
+        }
+    }
+});
+createBoard(16);   
