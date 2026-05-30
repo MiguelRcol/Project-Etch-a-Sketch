@@ -6,8 +6,7 @@
     border: 1px solid #000;
 }
 .board .square{
-    width: 25px;
-    height: 25px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    background-color: white;
 }
