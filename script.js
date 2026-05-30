@@ -21,8 +21,8 @@ function createBoard(size) {
         board.appendChild(square);
     }
 }
-const resetButton = document.getElementById('reset');
-resetButton.addEventListener('click', () => {
+const resizeButton = document.getElementById('resize');
+resizeButton.addEventListener('click', () => {
     let newSize = prompt("Enter new board size (e.g., 16 for 16x16):");
     if (newSize) {
         newSize = parseInt(newSize);
@@ -33,4 +33,10 @@ resetButton.addEventListener('click', () => {
         }
     }
 });
+
+const resetButton= document.getElementById('reset');
+resetButton.addEventListener('click', () => {
+    createBoard(16); // Reset to default size
+});
+
 createBoard(16);   
