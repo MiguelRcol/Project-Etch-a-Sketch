@@ -3,9 +3,10 @@ const board = document.querySelector('.board');
 
 
 function createBoard(size) {
-    const boardSize = 400; // Size of the board in pixels
-    const squareSize = boardSize / size; // Size of each square
-  
+    const DEFAULT_SIZE = 16;
+    const BOARD_SIZE = 400; // Size of the board in pixels
+    const squareSize = BOARD_SIZE / size; // Size of each square
+    
 
     board.innerHTML = '';
     for (let i = 0; i < size * size; i++) {
@@ -36,7 +37,7 @@ resizeButton.addEventListener('click', () => {
 
 const resetButton= document.getElementById('reset');
 resetButton.addEventListener('click', () => {
-    createBoard(16); // Reset to default size
+    createBoard(DEFAULT_SIZE); // Reset to default size
 });
 
-createBoard(16);   
+createBoard(DEFAULT_SIZE); 
