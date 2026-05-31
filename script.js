@@ -1,12 +1,10 @@
 const board = document.querySelector('.board');
-
+const DEFAULT_SIZE = 16;
 
 
 function createBoard(size) {
-    const DEFAULT_SIZE = 16;
-    const BOARD_SIZE = 400; // Size of the board in pixels
-    const squareSize = BOARD_SIZE / size; // Size of each square
-    
+    const boardSize = board.clientWidth;
+    const squareSize = boardSize / size;
 
     board.innerHTML = '';
     for (let i = 0; i < size * size; i++) {
@@ -35,9 +33,9 @@ resizeButton.addEventListener('click', () => {
     }
 });
 
-const resetButton= document.getElementById('reset');
+const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => {
-    createBoard(DEFAULT_SIZE); // Reset to default size
+    createBoard(DEFAULT_SIZE); 
 });
 
 createBoard(DEFAULT_SIZE); 
